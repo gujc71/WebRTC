@@ -89,14 +89,25 @@ socket.on('message', function(message) {
 });
 
 ////////////////////////////////////////////////////
-
+  const mediaOption = {
+    audio: true,
+    video: {
+      mandatory: {
+        maxWidth: 160,
+        maxHeight: 120,
+        maxFrameRate: 5,
+      },
+      optional: [
+        { googNoiseReduction: true }, // Likely removes the noise in the captured video stream at the expense of computational effort.
+        { facingMode: 'user' }, // Select the front/user facing camera or the rear/environment facing camera if available (on Phone)
+      ],
+    },
+  };
+  
 var localVideo = document.querySelector('#localVideo');
 var remoteVideo = document.querySelector('#remoteVideo');
 
-navigator.mediaDevices.getUserMedia({
-  audio: false,
-  video: true
-})
+navigator.mediaDevices.getUserMedia(mediaOption)
 .then(gotStream)
 .catch(function(e) {
   alert('getUserMedia() error: ' + e.name);
