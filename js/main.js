@@ -243,6 +243,9 @@ function handleRemoteStreamAdded(event) {
   console.log('Remote stream added.');
   remoteStream = event.stream;
   remoteVideo.srcObject = remoteStream;
+
+  remoteVideo.classList.add("remoteVideoInChatting");
+  localVideo.classList.add("localVideoInChatting");
 }
 
 function handleRemoteStreamRemoved(event) {
@@ -256,6 +259,9 @@ function hangup() {
 }
 
 function handleRemoteHangup() {
+  remoteVideo.classList.remove("remoteVideoInChatting");
+  localVideo.classList.remove("localVideoInChatting");
+	
   console.log('Session terminated.');
   stop();
   isInitiator = false;

@@ -2,7 +2,30 @@ body {
   font-family: sans-serif;
 }
 
-video {
+#videos {
+  width: 100%;
+  max-width: 500px;
+}
+
+#localVideo {
   max-width: 100%;
-  width: 320px;
+  width: 100%;
+  float:left;
+  border: 1px solid;
+}
+
+#remoteVideo {
+  max-width: 100%;
+  width: 100%;
+  float:left;
+  border: 1px solid;
+  display: none;
+}
+
+.localVideoInChatting {
+  width: 100px !important;
+  position: absolute;
+}
+.remoteVideoInChatting {
+  display: inline-block !important;
 }
