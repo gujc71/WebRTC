@@ -9,7 +9,7 @@ The fifth of Google's examples "Realtime communication with WebRTC", ["8. Combin
 * SSL applied
 * Re-enter the chat room
 * Add audio
-
+* Added CSS for a better chat screen
 
 ## Install & Run
 * npm install
